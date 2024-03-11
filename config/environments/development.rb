@@ -72,7 +72,7 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   # Raise error when a before_action's only/except options reference missing actions
-  config.action_controller.raise_on_missing_callback_actions = true
+
   
  config.hosts << "e551a90fad5a40b199a0e6c29316f86d.vfs.cloud9.ap-northeast-1.amazonaws.com"
 
