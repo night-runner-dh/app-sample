@@ -13,7 +13,7 @@ class ListsController < ApplicationController
     # 詳細画面へリダイレクト
      redirect_to list_path(@list.id)
      else
-      redirect_to new_list_path # renderではなくredirect_toだった場合  元の構文　render :new
+       redirect_to new_list_path # renderではなくredirect_toだった場合  元の構文 render :new もしredirect_to にするなら redirect_to new_list_path
      end
   end
    
