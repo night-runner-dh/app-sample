@@ -11,9 +11,13 @@ class ListsController < ApplicationController
      if @list.save
      # redirect_to '/top' を削除して、以下コードに変更
     # 詳細画面へリダイレクト
-     redirect_to list_path(@list.id)
+    # 3. フラッシュメッセージを定義し、詳細画面へリダイレクト
+       flash[:notice] = "投稿に成功しました。"
+       redirect_to list_path(@list.id)
      else
-       redirect_to new_list_path # renderではなくredirect_toだった場合  元の構文 render :new もしredirect_to にするなら redirect_to new_list_path
+    # 3. フラッシュメッセージを定義し、new.html.erbを描画する
+       flash.now[:alert] = "投稿に失敗しました。" #キーをalertに変更
+       render :new # renderではなくredirect_toだった場合  元の構文 render :new もしredirect_to にするなら redirect_to new_list_path
      end
   end
    
